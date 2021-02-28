@@ -1,6 +1,10 @@
 #include "Highway.h"
 
 #include <cassert>
+#include "Vehicle.h"
+#include "Car.h"
+#include "Motorcycle.h"
+
 
 void Highway::changeSpeed(int newSpeed)
 {
@@ -13,11 +17,26 @@ void Highway::changeSpeed(int newSpeed)
 
 void Highway::addVehicleInternal(Vehicle* v)
 {
-    assert(false);
+    // assert(false);
 
     /*
     depending on the derived type, call the member function that doesn't evade the cops. 
     */
+    if (v)
+    {
+        v->setSpeed(speedLimit);
+    }
+
+    if (Car* car = dynamic_cast<Car*>(v))
+    {
+        car->closeWindows();
+    }
+
+    if (Motorcycle* motorcycle = dynamic_cast<Motorcycle*>(v))
+    {
+        motorcycle->lanesplitAndRace(150);
+    }
+
 }
 
 void Highway::removeVehicleInternal(Vehicle* v)
