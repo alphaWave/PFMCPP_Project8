@@ -3,6 +3,8 @@
 #include <vector>
 #include <algorithm>
 
+struct Vehicle;
+
 struct Highway
 {
     void changeSpeed(int newSpeed);
