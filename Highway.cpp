@@ -35,7 +35,7 @@ void Highway::addVehicleInternal(Vehicle* v)
 
     if (SemiTruck* semiTruck = dynamic_cast<SemiTruck*>(v))
     {
-        
+        semiTruck->shiftGearUp();   
     }
 }
 
