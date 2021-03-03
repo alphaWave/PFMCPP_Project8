@@ -2,6 +2,9 @@
 #include <iostream>
 
 SemiTruck::SemiTruck(const std::string& name) : Vehicle(name) {}
+SemiTruck::~SemiTruck() = default;
+SemiTruck::SemiTruck(const SemiTruck&) = default;
+SemiTruck& SemiTruck::operator=(const SemiTruck&) = default;
 
 void SemiTruck::shiftGearUp()
 {
